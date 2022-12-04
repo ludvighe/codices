@@ -1,0 +1,92 @@
+.main-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
+  @media only screen and (min-width: 650px) {
+    padding: 1em;
+    gap: 1em;
+    .add-segment-component {
+      right: 1em;
+    }
+  }
+
+  .file-name-input {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: xx-large;
+    color: white;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff2;
+  }
+
+  .entry-field-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    height: calc(100vh - 5rem);
+    overflow-y: scroll;
+    padding-bottom: 10rem;
+  }
+
+  .gesture-wrapper {
+    position: relative;
+    border-radius: 5px;
+
+    &.selected {
+      border: 1px solid var(--clr-primary);
+    }
+
+    .delete-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      background-color: var(--clr-primary);
+      outline: none;
+      border: none;
+      border-radius: 0 0 0 10px;
+      color: white;
+      padding: 0.5em;
+      transition: right 150ms ease;
+    }
+  }
+}
+
+.add-segment-component {
+  position: absolute;
+  position: fixed;
+  width: 100%;
+  bottom: 1em;
+  //   right: 1em;
+
+  .add-segment-options {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 1em 0 4em;
+    border-radius: 0 10px 10px 0;
+
+    display: flex;
+    gap: 2em;
+
+    background-color: #fff2;
+    backdrop-filter: blur(10px);
+
+    transition: left 250ms ease-out;
+  }
+
+  .add-segment-btn {
+    position: absolute;
+    right: 1em;
+    bottom: 0;
+    background-color: #fff2;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+  }
+}
