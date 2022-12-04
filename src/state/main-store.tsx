@@ -1,3 +1,4 @@
+import { createEffect } from "solid-js";
 import { createStore } from "solid-js/store";
 import { CDocument, DataEntry } from "./types";
 
@@ -9,6 +10,10 @@ const INITIAL_FILE: CDocument = {
 };
 
 export const [file, setFile] = createStore<CDocument>(INITIAL_FILE);
+
+createEffect(() => {
+  document.title = `Codices - ${file.name.replaceAll(".note", "")}`;
+});
 
 export const addTextEntry = () => {
   setFile("entries", (prev) => [
