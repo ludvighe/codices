@@ -3,7 +3,6 @@ import { IconButton } from "../../common/buttons";
 import { toggleFullscreen } from "../../../services/fullscreen";
 import {
   clearFile,
-  file,
   importFile,
   saveFile as saveFile,
 } from "../../../state/main-store";
@@ -30,7 +29,6 @@ const Header = () => {
   onMount(() => {
     const data = window.localStorage.getItem("colorscheme");
     if (data) {
-      console.log("mount", JSON.parse(data));
       setColorscheme(JSON.parse(data));
     }
   });

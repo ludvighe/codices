@@ -2,7 +2,7 @@ import { createStore } from "solid-js/store";
 import { CDocument, DataEntry } from "./types";
 
 const INITIAL_FILE: CDocument = {
-  name: "Document",
+  name: "Title",
   path: "",
   saved: false,
   entries: [{ id: 1, type: "text", text: "" }],
@@ -42,7 +42,12 @@ export const importFile = async (file: File) => {
 };
 
 export const clearFile = () => {
-  setFile(INITIAL_FILE);
+  setFile({
+    name: "Title",
+    path: "",
+    saved: false,
+    entries: [{ id: 1, type: "text", text: "" }],
+  });
 };
 
 export const saveFile = async () => {
